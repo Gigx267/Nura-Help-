@@ -3,11 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Nura Help | 24/7 Personalized Medical Guidance</title>
+  <title>Nura Help | 24/7 Medical Assistance</title>
   <link rel="icon" type="image/png" href="logo (2).jpeg">
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 </head>
+<body>
+<!-- Header with Transparent Navbar -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nura Help</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
     <div id="particles-background"></div>
     <style>
@@ -668,10 +677,58 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-  <header class="header redesigned transparent-navbar">
+    <script>
+        particlesJS('particles-background', {
+            "particles": {
+                "number": {
+                    "value": 64,
+                    "density": { "enable": true, "value_area": 900 }
+                },
+                "color": { "value": "#00f0ff" },
+                "shape": { "type": "circle" },
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 }
+                },
+                "size": {
+                    "value": 3.5,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 2, "size_min": 0.2 }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 130,
+                    "color": "#00f0ff",
+                    "opacity": 0.18,
+                    "width": 1.4
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.2,
+                    "random": true,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": false },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": { "opacity": 0.4 }
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <header class="header redesigned transparent-navbar">
         <div class="logo-hightech-img">
-           <img
+            <img
                 src="logo (2).jpeg"
                 alt="Nura Logo"
             />
@@ -682,19 +739,150 @@
             <a href="About.html">About</a>
             <a href="services.html">Services</a>
             <a href="features.html">Features</a>
-            <a href="features.html">Privacy</a>
+            <a href="Privacy.html">Privacy</a>
             <a href="contact.html">Contact</a>
             <a href="Download.html" class="signin-btn">Download App </a>
         </nav>
         <button class="hamburger" aria-label="Toggle Navigation" onclick="toggleNav()">
-            <span style="font" > x</span>
+            <span></span>
             <span></span>
             <span></span>
         </button>
     </header>
 
-  
+    <script>
+        // Initialize particles.js for hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00f0ff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 2,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#00f0ff",
+                            "opacity": 0.2,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 0.5
+                                }
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
 
+            // Add hover effect to holographic button
+            const holographicBtn = document.querySelector('.holographic');
+            if (holographicBtn) {
+                holographicBtn.addEventListener('mousemove', (e) => {
+                    const x = e.pageX - holographicBtn.offsetLeft;
+                    const y = e.pageY - holographicBtn.offsetTop;
+
+                    holographicBtn.style.setProperty('--x', `${x}px`);
+                    holographicBtn.style.setProperty('--y', `${y}px`);
+                });
+            }
+        });
+
+        // Toggle mobile navigation
+        function toggleNav() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger');
+
+            nav.classList.toggle('mobile-active');
+            nav.classList.toggle('is-open'); // Add/remove for animation
+            hamburger.classList.toggle('is-active'); // For hamburger 'x' animation
+        }
+
+        // Accessibility: Voice/Language toggle placeholder (add functionality here)
+        function toggleVoiceLang() {
+            alert('Voice and Language options coming soon!');
+        }
+    </script>
+
+   
+
+   
+
+    <button class="accessibility-btn" onclick="toggleVoiceLang()">
+        🌐
+        <span class="sr-only">Voice and Language Accessibility</span>
+    </button>
+</body>
+</html>
 
 
   <!-- Hero Section -->
