@@ -3,248 +3,886 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Nura Help | 24/7 Personalized Medical Guidance</title>
+  <title>Nura Help | About Us  - 24/7 Medical Assistance</title>
   <link rel="icon" type="image/png" href="logo (2).jpeg">
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- Improved Transparent NavBar and Hero Integration Example -->
-<header class="header redesigned transparent-navbar">
-  <!-- High-Tech Logo Container Ready for Image Branding -->
-  <div class="logo-hightech-img">
-    <img 
-      src="logo (2).jpeg" 
-      alt="Nura Logo"
-    />
-  </div>
+<!-- Header with Transparent Navbar -->
 
-  <nav id="main-nav" class="nav">
-    <a href="index.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="features.html">Features</a>
-    <a href="features.html">Privacy</a>
-    <a href="contact.html">Contact</a>
-    <a href="Download.html" class="signin-btn">Download App</a>
-  </nav>
-  <button class="hamburger" aria-label="Toggle Navigation" id="hamburger-btn">
-    <span style="color: #d1ebfb; font-weight: 900;"  >x</span>
-    <span></span>
-    <span></span>
-  </button>
-</header>
 
-<script>
-// Hamburger toggle for mobile
-function toggleNav() {
-  const nav = document.getElementById('main-nav');
-  nav.classList.toggle('open');
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nura Help</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div id="particles-background"></div>
+    <style>
+        /* General particle background styles (as you already have them) */
+        #particles-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .futuristic-hero, .hero {
+            position: relative;
+            z-index: 1;
+        }
 
-// Open/close on hamburger click
-document.getElementById('hamburger-btn').addEventListener('click', function(e) {
-  e.stopPropagation();
-  toggleNav();
-});
+        /* --- TRANSPARENT NAVBAR + HERO INTEGRATION --- */
+        .header.redesigned.transparent-navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            background: rgba(10, 20, 40, 0.15);
+            box-shadow: none;
+            border: none;
+            backdrop-filter: blur(8px) saturate(140%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between; /* This helps push elements apart */
+            padding: 1.2rem 3vw 0.7rem 3vw;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
 
-// Optional: Close the menu when clicking outside (for better UX on mobile)
-document.addEventListener('click', function(event) {
-  const nav = document.getElementById('main-nav');
-  const hamburger = document.getElementById('hamburger-btn');
-  if (
-    nav.classList.contains('open') &&
-    !nav.contains(event.target) &&
-    !hamburger.contains(event.target)
-  ) {
-    nav.classList.remove('open');
-  }
-});
+        .logo-hightech-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: auto; /* Pushes logo to the left */
+        }
 
-// Responsive nav for mobile
-function handleResize() {
-  const nav = document.getElementById('main-nav');
-  if (window.innerWidth > 600) {
-    nav.classList.remove('mobile', 'open');
-    nav.style.display = 'flex';
-  } else {
-    nav.classList.add('mobile');
-    nav.style.display = nav.classList.contains('open') ? 'flex' : 'none';
-  }
-}
-window.addEventListener('resize', handleResize);
-window.addEventListener('DOMContentLoaded', handleResize);
+        .logo-hightech-img img {
+            height: 1cm;
+            box-shadow: 0 0 20px 5px #38b6ff, 0 0 40px 10px #50e3ff;
+            border-radius: 10px;
+            border: 2px solid #38b6ff;
+            background: rgba(56, 182, 255, 0.05);
+            filter: brightness(1.15) drop-shadow(0 0 12px #b6eaff);
+            transition: box-shadow 0.3s;
+        }
 
-</script>
+        /* NAV STYLES */
+        .nav {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.08rem;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+            margin-right: 10%;
+        }
 
-<style>
-/* --- TRANSPARENT NAVBAR + HERO INTEGRATION --- */
-.header.redesigned.transparent-navbar {
-  position: absolute;
-  top: 0; left: 0; width: 100%;
-  z-index: 10;
-  background: rgba(10, 20, 40, 0.15);
-  box-shadow: none;
-  border: none;
-  backdrop-filter: blur(8px) saturate(140%);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem 3vw 0.7rem 3vw;
-  transition: background 0.3s, box-shadow 0.3s;
-}
+        .nav a {
+            color: #fff;
+            text-shadow: 0 0 8px #00f0ff80, 0 0 1px #fff;
+            padding: 0.4rem 1.1rem;
+            border-radius: 24px;
+            text-decoration: none;
+            transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+            background: rgba(0, 240, 255, 0.04);
+            border: 1px solid transparent;
+        }
 
-.logo-hightech-img {
-  display: flex; justify-content: center; align-items: center;
-}
-.logo-hightech-img img {
-  height: 1.1cm;
-  box-shadow: 0 0 20px 5px #38b6ff, 0 0 40px 10px #50e3ff;
-  border-radius: 10px;
-  border: 2px solid #38b6ff;
-  background: rgba(56, 182, 255, 0.05);
-  filter: brightness(1.15) drop-shadow(0 0 12px #b6eaff);
-  transition: box-shadow 0.3s;
-}
+        .nav a:hover, .nav a:focus {
+            color: #0ff;
+            background: rgba(0, 240, 255, 0.11);
+            box-shadow: 0 0 14px #00f0ff55;
+            border: 1px solid #00f0ff60;
+        }
 
-/* NAV STYLES */
-.nav {
-  display: flex;
-  gap: 1.2rem;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.08rem;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  margin-right: 10%;
-  transition: display 0.2s;
-}
+        .nav .signin-btn {
+            background: rgba(0, 240, 255, 0.18);
+            color: #111;
+            font-weight: 700;
+            border: 1.5px solid #00f0ff88;
+            box-shadow: 0 2px 24px #00f0ff33;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .nav .signin-btn:hover {
+            background: #00f0ff;
+            color: #001133;
+            box-shadow: 0 4px 32px #00f0ff55;
+        }
 
-.nav a {
-  color: #fff;
-  text-shadow: 0 0 8px #00f0ff80, 0 0 1px #fff;
-  padding: 0.4rem 1.1rem;
-  border-radius: 24px;
-  text-decoration: none;
-  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-  background: rgba(0, 240, 255, 0.04);
-  border: 1px solid transparent;
-}
+        /* Hamburger (mobile) */
+        .hamburger {
+            display: none; /* Hidden by default, shown in media query */
+            background: none;
+            border: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0.6rem;
+            cursor: pointer;
+            z-index: 100;
+            margin-right: 15px; /* Adjust this value to move it further left */
+        }
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #00f0ff;
+            border-radius: 2px;
+            display: block;
+            transition: all 0.3s ease;
+        }
 
-.nav a:hover, .nav a:focus {
-  color: #0ff;
-  background: rgba(0, 240, 255, 0.11);
-  box-shadow: 0 0 14px #00f0ff55;
-  border: 1px solid #00f0ff60;
-}
+        /* Hamburger animation for 'x' */
+        .hamburger.is-active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.is-active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
 
-.nav .signin-btn {
-  background: rgba(0, 240, 255, 0.18);
-  color: #111;
-  font-weight: 700;
-  border: 1.5px solid #00f0ff88;
-  box-shadow: 0 2px 24px #00f0ff33;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.nav .signin-btn:hover {
-  background: #00f0ff;
-  color: #001133;
-  box-shadow: 0 4px 32px #00f0ff55;
-}
+        /* Mobile Nav Specifics */
+        .nav.mobile-active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%; /* Position below the header */
+            left: 0;
+            width: 100%;
+            background: rgba(10, 20, 40, 0.95); /* Darker background for mobile menu */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            padding: 1rem 0;
+            border-radius: 0 0 8px 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s;
+        }
 
-/* Hamburger (mobile) */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 0.6rem;
-  cursor: pointer;
-  z-index: 100;
-}
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background: #00f0ff;
-  border-radius: 2px;
-  display: block;
-  transition: all 0.3s;
-}
+        .nav.mobile-active.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .header.redesigned.transparent-navbar {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.7rem 3vw 0.2rem 3vw;
-    background: rgba(10, 20, 40, 0.29);
-  }
-  .nav {
-    gap: 1.2rem;
-    font-size: 1rem;
-    margin-right: 0;
-  }
-  .futuristic-hero {
-    padding-top: 6rem;
-  }
-  .hamburger {
-    display: flex;
-    margin-left: auto;
-  }
-}
+        .nav.mobile-active a {
+            padding: 0.8rem 1.5rem;
+            margin: 0.2rem auto; /* Center links in mobile view */
+            width: fit-content;
+        }
 
-@media (max-width: 600px) {
-  .header.redesigned.transparent-navbar {
-    flex-direction: row;
-    padding: 0.45rem 2vw 0.1rem 2vw;
-  }
-  .logo-hightech-img img {
-    height: 0.8cm;
-  }
-  /* Hide nav by default, show/hide via JS */
-  .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: rgba(10, 20, 40, 0.97);
-    box-shadow: 0 8px 24px #00f0ff22;
-    border-radius: 0 0 22px 22px;
-    gap: 0;
-    align-items: stretch;
-    margin-right: 0;
-    padding: 0.4rem 0 0.7rem 0;
-    display: none;
-    transition: display 0.2s;
-  }
-  .nav.open {
-    display: flex !important;
-  }
-  .hamburger {
-    display: flex;
-    margin-left: auto;
-  }
-  .nav a {
-    margin: 0.2rem 0.8rem;
-    font-size: 1.12rem;
-    border-radius: 10px;
-    text-align: left;
-  }
-  .futuristic-hero {
-    padding-top: 4.5rem;
-  }
-}
+        /* Make hero section start under the nav bar */
+        .futuristic-hero {
+            padding-top: 7.5rem; /* adjust if navbar height changes */
+        }
 
-/* Optionally, if you want hero elements to be under navbar visually on scroll: */
-body {
-  margin: 0;
-  background: #0f0f2d;
-}
-</style>
+        /* MEDIA QUERIES */
+        @media (max-width: 900px) {
+            .header.redesigned.transparent-navbar {
+                flex-direction: row; /* Keep row for logo and hamburger */
+                align-items: center;
+                padding: 0.7rem 3vw 0.7rem 3vw; /* Consistent padding */
+                background: rgba(10, 20, 40, 0.29);
+            }
+            .nav {
+                display: none; /* Hide desktop nav */
+            }
+            .hamburger {
+                display: flex; /* Show hamburger */
+            }
+            .futuristic-hero {
+                padding-top: 6rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header.redesigned.transparent-navbar {
+                padding: 0.45rem 2vw 0.45rem 2vw; /* Adjust padding for smaller screens */
+            }
+            .logo-hightech-img img {
+                height: 0.8cm;
+            }
+            .hamburger {
+                margin-right: 10px; /* Adjust further left for smaller screens */
+            }
+            .futuristic-hero {
+                padding-top: 4.5rem;
+            }
+        }
+
+        /* Optionally, if you want hero elements to be under navbar visually on scroll: */
+        body {
+            margin: 0;
+            background: #0f0f2d;
+        }
+
+        /* Hero Section Styles (as you already have them) */
+        /* Base Styles */
+        .futuristic-hero {
+            --primary: #00f0ff;
+            --primary-dark: #0066ff;
+            --accent: #ff00e4;
+            --dark: #0a0a1a;
+            --light: #f8f9ff;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0f2d 0%, #050510 100%);
+            color: var(--light);
+            padding: 4rem 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            align-items: center;
+        }
+
+        /* Typography */
+        .hero-headline {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .hero-headline span {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: var(--accent);
+            z-index: -1;
+            animation: glitch-effect 3s infinite;
+        }
+
+        .glitch::after {
+            color: var(--primary);
+            z-index: -2;
+            animation: glitch-effect 2s infinite reverse;
+        }
+
+        .typewriter {
+            width: fit-content;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            width: fit-content;
+        }
+
+        .hero-subtext span {
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textReveal 0.8s forwards;
+        }
+
+        .hero-subtext .delay-1 {
+            animation-delay: 0.4s;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none; /* Ensure buttons are not underlined */
+        }
+
+        .btn.primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn.primary .arrow {
+            width: 18px;
+            height: 18px;
+            stroke: var(--dark);
+            transition: transform 0.3s ease;
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .btn.primary:hover .arrow {
+            transform: translateX(3px);
+        }
+
+        .pulse-hover:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .holographic-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,
+                rgba(0, 240, 255, 0.2) 0%,
+                rgba(255, 0, 228, 0.2) 50%,
+                rgba(0, 240, 255, 0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .holographic:hover .holographic-effect {
+            opacity: 1;
+            animation: holographicShine 2s infinite;
+        }
+
+        /* Video Section */
+        .hero-illustration {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 10, 26, 0.7) 0%, rgba(0, 96, 255, 0.2) 100%);
+            z-index: 1;
+        }
+
+        /* Floating Elements */
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.8rem 1.2rem;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex; /* To align pulse dot and text */
+            align-items: center; /* To align pulse dot and text */
+        }
+
+        .card-1 {
+            top: 20%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .card-2 {
+            bottom: 15%;
+            right: -5%;
+            animation-delay: 1s;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Tech Stack Chips */
+        .tech-stack {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .chip {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .delay-1 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-2 {
+            animation-delay: 1s;
+        }
+
+        /* Scrolling Tech */
+        .scrolling-tech {
+            position: relative; /* Changed to relative for better flow within section */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            margin-top: 4rem; /* Add some space above it */
+        }
+
+        .scrolling-items {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite;
+        }
+
+        .scrolling-items span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Animations (as you already have them) */
+        @keyframes glitch-effect {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+
+        @keyframes textReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes holographicShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Particles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-illustration {
+                height: 400px;
+                order: 0;
+            }
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #050510 0%, #0f0f2d 100%);
+            color: var(--light);
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+
+        .final-cta .btn {
+            margin: 0.5rem;
+        }
+
+        /* Footer */
+        .footer.redesigned-footer {
+            background: #000;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .footer.redesigned-footer div {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer.redesigned-footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer.redesigned-footer a:hover {
+            color: var(--primary);
+        }
+
+        .footer.redesigned-footer small {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Accessibility Button */
+        .accessibility-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+
+        .accessibility-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-background', {
+            "particles": {
+                "number": {
+                    "value": 64,
+                    "density": { "enable": true, "value_area": 900 }
+                },
+                "color": { "value": "#00f0ff" },
+                "shape": { "type": "circle" },
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 }
+                },
+                "size": {
+                    "value": 3.5,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 2, "size_min": 0.2 }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 130,
+                    "color": "#00f0ff",
+                    "opacity": 0.18,
+                    "width": 1.4
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.2,
+                    "random": true,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": false },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": { "opacity": 0.4 }
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <header class="header redesigned transparent-navbar">
+        <div class="logo-hightech-img">
+            <img
+                src="logo (2).jpeg"
+                alt="Nura Logo"
+            />
+        </div>
+
+        <nav id="main-nav" class="nav">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="features.html">Features</a>
+            <a href="Privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
+            <a href="Download.html" class="signin-btn">Download App </a>
+        </nav>
+        <button class="hamburger" aria-label="Toggle Navigation" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <script>
+        // Initialize particles.js for hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00f0ff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 2,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#00f0ff",
+                            "opacity": 0.2,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 0.5
+                                }
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+
+            // Add hover effect to holographic button
+            const holographicBtn = document.querySelector('.holographic');
+            if (holographicBtn) {
+                holographicBtn.addEventListener('mousemove', (e) => {
+                    const x = e.pageX - holographicBtn.offsetLeft;
+                    const y = e.pageY - holographicBtn.offsetTop;
+
+                    holographicBtn.style.setProperty('--x', `${x}px`);
+                    holographicBtn.style.setProperty('--y', `${y}px`);
+                });
+            }
+        });
+
+        // Toggle mobile navigation
+        function toggleNav() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger');
+
+            nav.classList.toggle('mobile-active');
+            nav.classList.toggle('is-open'); // Add/remove for animation
+            hamburger.classList.toggle('is-active'); // For hamburger 'x' animation
+        }
+
+        // Accessibility: Voice/Language toggle placeholder (add functionality here)
+        function toggleVoiceLang() {
+            alert('Voice and Language options coming soon!');
+        }
+    </script>
+
+   
+
+   
+
+    <button class="accessibility-btn" onclick="toggleVoiceLang()">
+        🌐
+        <span class="sr-only">Voice and Language Accessibility</span>
+    </button>
+</body>
+</html>
   <!-- Hero Section -->
  <section class="about-us futuristic-hero">
   <div class="hero-grid">
