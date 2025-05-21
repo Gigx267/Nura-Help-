@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact Us | Nura Help</title>
+  <link rel="icon" type="image/png" href="logo (2).jpeg">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVIGATION BAR START -->
+  <header style="width:100%;background:transparent;box-shadow:none;position:sticky;top:0;z-index:1000;">
+    <div class="nav-container">
+      <div style="display:flex;align-items:center;">
+        <a href="index.html" style="display:flex;align-items:center;text-decoration:none;">
+          <img src="logo (2).jpeg" alt="Nura Help Logo" style="width:36px;height:36px;border-radius:8px;margin-right:10px;">
+          <span style="color:#00f0ff;font-weight:900;font-size:1.25rem;">Nura Help | Contact Us </span>
+        </a>
+      </div>
+      <nav class="nav" id="main-nav">
+         <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="features.html">Features</a>
+            <a href="contact.html">Contact</a>
+            <a href="Download.html" class="signin-btn">Download App </a>
+      </nav>
+      <button class="hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav" onclick="toggleNav()" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- NAVIGATION BAR END -->
+
+  <main>
+    <section class="contact-section">
+      <h1 class="contact-title">Contact Us</h1>
+      <div class="contact-desc">
+        Have any questions, feedback, or need help? Reach out to the Nura Help team.<br>
+        Fill out the form below and we'll get back to you as soon as possible.
+      </div>
+      <div class="contact-form-container">
+        <form class="contact-form" autocomplete="off" onsubmit="return sendContactForm(event);">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required autocomplete="off" placeholder="Enter your name">
+          
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required autocomplete="off" placeholder="Enter your email">
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+          
+          <button type="submit">Send Message</button>
+          <div id="contact-status" style="margin-top:0.7rem;font-size:1rem;"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f2d 0%, #050510 100%);
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      /* Makes nav blend with contact section */
+    }
+    /* NAV STYLES */
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0.8rem 2rem 0.8rem 1rem;
+      background: transparent;
+      box-shadow: none;
+    }
+    .nav {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        margin-right: 10%;
+        transition: none;
+    }
+    .nav a {
+        color: #fff;
+        text-shadow: 0 0 8px #00f0ff80, 0 0 1px #fff;
+        padding: 0.4rem 1.1rem;
+        border-radius: 24px;
+        text-decoration: none;
+        transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+        background: rgba(0, 240, 255, 0.04);
+        border: 1px solid transparent;
+    }
+    .nav a.active,
+    .nav a:hover,
+    .nav a:focus {
+        color: #0ff;
+        background: rgba(0, 240, 255, 0.11);
+        box-shadow: 0 0 14px #00f0ff55;
+        border: 1px solid #00f0ff60;
+    }
+    .nav .signin-btn {
+        background: rgba(0, 240, 255, 0.18);
+        color: #111;
+        font-weight: 700;
+        border: 1.5px solid #00f0ff88;
+        box-shadow: 0 2px 24px #00f0ff33;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .nav .signin-btn:hover {
+        background: #00f0ff;
+        color: #001133;
+        box-shadow: 0 4px 32px #00f0ff55;
+    }
+    /* Hamburger (mobile) */
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0.6rem;
+        cursor: pointer;
+        z-index: 100;
+        margin-right: 15px;
+    }
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #00f0ff;
+        border-radius: 2px;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    .hamburger.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    /* Mobile Nav Specifics */
+    .nav.mobile-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        background: rgba(10, 20, 40, 0.95);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        padding: 1rem 0;
+        border-radius: 0 0 8px 8px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s;
+        margin-right: 0;
+        z-index: 1000;
+    }
+    .nav.mobile-active.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .nav.mobile-active a {
+        padding: 0.8rem 1.5rem;
+        margin: 0.2rem auto;
+        width: fit-content;
+    }
+    @media (max-width: 900px) {
+        .nav {
+            display: none;
+        }
+        .nav.mobile-active {
+            display: flex;
+        }
+        .hamburger {
+            display: flex;
+        }
+        .nav-container {
+            padding: 0.8rem 0.7rem;
+        }
+    }
+    @media (max-width: 600px) {
+      .nav-container {
+        padding: 0.8rem 0.5rem 0.8rem 0.5rem !important;
+      }
+    }
+
+    /* CONTACT SECTION STYLES */
+    .contact-section {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* Make it blend with nav and background */
+      background: transparent;
+      color: #f8f9ff;
+      padding: 4rem 1rem 2rem 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #00f0ff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 15px #00f0ff55;
+      text-align: center;
+    }
+    .contact-desc {
+      color: #d0eaff;
+      margin-bottom: 2.5rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-align: center;
+    }
+    .contact-form-container {
+      background: rgba(10, 20, 40, 0.88);
+      border-radius: 14px;
+      box-shadow: 0 10px 32px #00f0ff22;
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 410px;
+      width: 100%;
+      margin-bottom: 2rem;
+      z-index: 2;
+      border: 1.5px solid #00f0ff44;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: #00f0ff;
+      letter-spacing: 0.5px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.1rem;
+      border-radius: 7px;
+      border: 1px solid #00f0ff44;
+      background: rgba(0,240,255,0.05);
+      color: #fff;
+      font-size: 1rem;
+      resize: vertical;
+      outline: none;
+      transition: border 0.25s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border: 1.5px solid #00f0ff;
+      background: rgba(0,240,255,0.13);
+    }
+    .contact-form button {
+      background: #00f0ff;
+      color: #0a0a1a;
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.15rem;
+      cursor: pointer;
+      box-shadow: 0 4px 18px #00f0ff55;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      margin-top: 0.2rem;
+    }
+    .contact-form button:hover {
+      background: #0099cc;
+      color: #fff;
+      box-shadow: 0 8px 32px #00f0ff55;
+    }
+    .contact-details {
+      margin-top: 2rem;
+      color: #c8e8ef;
+      text-align: center;
+      font-size: 1.07rem;
+    }
+    .contact-details strong {
+      color: #00f0ff;
+    }
+    @media (max-width: 600px) {
+      .contact-section {
+        padding: 2rem 0.3rem 1.5rem 0.3rem;
+      }
+      .contact-title {
+        font-size: 2.0rem;
+      }
+      .contact-form-container {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+      }
+    }
+  </style>
+  <script>
+    // Simple form handler (demo only)
+    function sendContactForm(e) {
+      e.preventDefault();
+      var status = document.getElementById('contact-status');
+      status.style.color = "#00f0ff";
+      status.textContent = "Thank you! Your message has been submitted.";
+      setTimeout(function(){ status.textContent = ""; }, 6000);
+      e.target.reset();
+      return false;
+    }
+    // Hamburger menu functionality for mobile
+    function toggleNav() {
+      const nav = document.getElementById('main-nav');
+      const hamburger = document.getElementById('nav-hamburger');
+      // For mobile
+      if (window.innerWidth <= 900) {
+        if (!nav.classList.contains('mobile-active')) {
+          nav.classList.add('mobile-active');
+        }
+        nav.classList.toggle('is-open');
+        hamburger.classList.toggle('is-active');
+        if (nav.classList.contains('is-open')) {
+          hamburger.setAttribute('aria-expanded', 'true');
+        } else {
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+    // Close nav when resizing to desktop
+    window.addEventListener('resize', () => {
+      const nav = document.getElementById('main-nav');
+      const hamburger = document.getElementById('nav-hamburger');
+      if (window.innerWidth > 900) {
+        nav.classList.remove('mobile-active', 'is-open');
+        hamburger.classList.remove('is-active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+</body>
+</html>

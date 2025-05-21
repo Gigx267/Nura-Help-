@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Nura Help | Our Services - 24/7 Medical Assistance</title>
+  <link rel="icon" type="image/png" href="logo (2).jpeg">
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Header with Transparent Navbar -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nura Help</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div id="particles-background"></div>
+    <style>
+        /* General particle background styles (as you already have them) */
+        #particles-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .futuristic-hero, .hero {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- TRANSPARENT NAVBAR + HERO INTEGRATION --- */
+        .header.redesigned.transparent-navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            background: rgba(10, 20, 40, 0.15);
+            box-shadow: none;
+            border: none;
+            backdrop-filter: blur(8px) saturate(140%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between; /* This helps push elements apart */
+            padding: 1.2rem 3vw 0.7rem 3vw;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        .logo-hightech-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: auto; /* Pushes logo to the left */
+        }
+
+        .logo-hightech-img img {
+            height: 1cm;
+            box-shadow: 0 0 20px 5px #38b6ff, 0 0 40px 10px #50e3ff;
+            border-radius: 10px;
+            border: 2px solid #38b6ff;
+            background: rgba(56, 182, 255, 0.05);
+            filter: brightness(1.15) drop-shadow(0 0 12px #b6eaff);
+            transition: box-shadow 0.3s;
+        }
+
+        /* NAV STYLES */
+        .nav {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.08rem;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+            margin-right: 10%;
+        }
+
+        .nav a {
+            color: #fff;
+            text-shadow: 0 0 8px #00f0ff80, 0 0 1px #fff;
+            padding: 0.4rem 1.1rem;
+            border-radius: 24px;
+            text-decoration: none;
+            transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+            background: rgba(0, 240, 255, 0.04);
+            border: 1px solid transparent;
+        }
+
+        .nav a:hover, .nav a:focus {
+            color: #0ff;
+            background: rgba(0, 240, 255, 0.11);
+            box-shadow: 0 0 14px #00f0ff55;
+            border: 1px solid #00f0ff60;
+        }
+
+        .nav .signin-btn {
+            background: rgba(0, 240, 255, 0.18);
+            color: #111;
+            font-weight: 700;
+            border: 1.5px solid #00f0ff88;
+            box-shadow: 0 2px 24px #00f0ff33;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        .nav .signin-btn:hover {
+            background: #00f0ff;
+            color: #001133;
+            box-shadow: 0 4px 32px #00f0ff55;
+        }
+
+        /* Hamburger (mobile) */
+        .hamburger {
+            display: none; /* Hidden by default, shown in media query */
+            background: none;
+            border: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0.6rem;
+            cursor: pointer;
+            z-index: 100;
+            margin-right: 15px; /* Adjust this value to move it further left */
+        }
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #00f0ff;
+            border-radius: 2px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        /* Hamburger animation for 'x' */
+        .hamburger.is-active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.is-active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Nav Specifics */
+        .nav.mobile-active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%; /* Position below the header */
+            left: 0;
+            width: 100%;
+            background: rgba(10, 20, 40, 0.95); /* Darker background for mobile menu */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            padding: 1rem 0;
+            border-radius: 0 0 8px 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s;
+        }
+
+        .nav.mobile-active.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav.mobile-active a {
+            padding: 0.8rem 1.5rem;
+            margin: 0.2rem auto; /* Center links in mobile view */
+            width: fit-content;
+        }
+
+        /* Make hero section start under the nav bar */
+        .futuristic-hero {
+            padding-top: 7.5rem; /* adjust if navbar height changes */
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 900px) {
+            .header.redesigned.transparent-navbar {
+                flex-direction: row; /* Keep row for logo and hamburger */
+                align-items: center;
+                padding: 0.7rem 3vw 0.7rem 3vw; /* Consistent padding */
+                background: rgba(10, 20, 40, 0.29);
+            }
+            .nav {
+                display: none; /* Hide desktop nav */
+            }
+            .hamburger {
+                display: flex; /* Show hamburger */
+            }
+            .futuristic-hero {
+                padding-top: 6rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header.redesigned.transparent-navbar {
+                padding: 0.45rem 2vw 0.45rem 2vw; /* Adjust padding for smaller screens */
+            }
+            .logo-hightech-img img {
+                height: 0.8cm;
+            }
+            .hamburger {
+                margin-right: 10px; /* Adjust further left for smaller screens */
+            }
+            .futuristic-hero {
+                padding-top: 4.5rem;
+            }
+        }
+
+        /* Optionally, if you want hero elements to be under navbar visually on scroll: */
+        body {
+            margin: 0;
+            background: #0f0f2d;
+        }
+
+        /* Hero Section Styles (as you already have them) */
+        /* Base Styles */
+        .futuristic-hero {
+            --primary: #00f0ff;
+            --primary-dark: #0066ff;
+            --accent: #ff00e4;
+            --dark: #0a0a1a;
+            --light: #f8f9ff;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0f2d 0%, #050510 100%);
+            color: var(--light);
+            padding: 4rem 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            align-items: center;
+        }
+
+        /* Typography */
+        .hero-headline {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .hero-headline span {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: var(--accent);
+            z-index: -1;
+            animation: glitch-effect 3s infinite;
+        }
+
+        .glitch::after {
+            color: var(--primary);
+            z-index: -2;
+            animation: glitch-effect 2s infinite reverse;
+        }
+
+        .typewriter {
+            width: fit-content;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            width: fit-content;
+        }
+
+        .hero-subtext span {
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textReveal 0.8s forwards;
+        }
+
+        .hero-subtext .delay-1 {
+            animation-delay: 0.4s;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none; /* Ensure buttons are not underlined */
+        }
+
+        .btn.primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn.primary .arrow {
+            width: 18px;
+            height: 18px;
+            stroke: var(--dark);
+            transition: transform 0.3s ease;
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+        }
+
+        .btn.primary:hover .arrow {
+            transform: translateX(3px);
+        }
+
+        .pulse-hover:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .holographic-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,
+                rgba(0, 240, 255, 0.2) 0%,
+                rgba(255, 0, 228, 0.2) 50%,
+                rgba(0, 240, 255, 0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .holographic:hover .holographic-effect {
+            opacity: 1;
+            animation: holographicShine 2s infinite;
+        }
+
+        /* Video Section */
+        .hero-illustration {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 10, 26, 0.7) 0%, rgba(0, 96, 255, 0.2) 100%);
+            z-index: 1;
+        }
+
+        /* Floating Elements */
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 0.8rem 1.2rem;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex; /* To align pulse dot and text */
+            align-items: center; /* To align pulse dot and text */
+        }
+
+        .card-1 {
+            top: 20%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .card-2 {
+            bottom: 15%;
+            right: -5%;
+            animation-delay: 1s;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Tech Stack Chips */
+        .tech-stack {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        .chip {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .delay-1 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-2 {
+            animation-delay: 1s;
+        }
+
+        /* Scrolling Tech */
+        .scrolling-tech {
+            position: relative; /* Changed to relative for better flow within section */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            margin-top: 4rem; /* Add some space above it */
+        }
+
+        .scrolling-items {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            white-space: nowrap;
+            animation: scroll 30s linear infinite;
+        }
+
+        .scrolling-items span {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Animations (as you already have them) */
+        @keyframes glitch-effect {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+
+        @keyframes textReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes holographicShine {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Particles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                order: 1;
+            }
+
+            .hero-illustration {
+                height: 400px;
+                order: 0;
+            }
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #050510 0%, #0f0f2d 100%);
+            color: var(--light);
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+
+        .final-cta .btn {
+            margin: 0.5rem;
+        }
+
+        /* Footer */
+        .footer.redesigned-footer {
+            background: #000;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .footer.redesigned-footer div {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer.redesigned-footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer.redesigned-footer a:hover {
+            color: var(--primary);
+        }
+
+        .footer.redesigned-footer small {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Accessibility Button */
+        .accessibility-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4);
+            cursor: pointer;
+            z-index: 100;
+            transition: transform 0.2s ease;
+        }
+
+        .accessibility-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-background', {
+            "particles": {
+                "number": {
+                    "value": 64,
+                    "density": { "enable": true, "value_area": 900 }
+                },
+                "color": { "value": "#00f0ff" },
+                "shape": { "type": "circle" },
+                "opacity": {
+                    "value": 0.6,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 }
+                },
+                "size": {
+                    "value": 3.5,
+                    "random": true,
+                    "anim": { "enable": true, "speed": 2, "size_min": 0.2 }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 130,
+                    "color": "#00f0ff",
+                    "opacity": 0.18,
+                    "width": 1.4
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1.2,
+                    "random": true,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": false },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": { "opacity": 0.4 }
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <header class="header redesigned transparent-navbar">
+        <div class="logo-hightech-img">
+            <img
+                src="logo (2).jpeg"
+                alt="Nura Logo"
+            />
+        </div>
+
+        <nav id="main-nav" class="nav">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="features.html">Features</a>
+            <a href="contact.html">Contact</a>
+            <a href="Download.html" class="signin-btn">Download App </a>
+        </nav>
+        <button class="hamburger" aria-label="Toggle Navigation" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <script>
+        // Initialize particles.js for hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00f0ff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 2,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#00f0ff",
+                            "opacity": 0.2,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 1,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 0.5
+                                }
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+
+            // Add hover effect to holographic button
+            const holographicBtn = document.querySelector('.holographic');
+            if (holographicBtn) {
+                holographicBtn.addEventListener('mousemove', (e) => {
+                    const x = e.pageX - holographicBtn.offsetLeft;
+                    const y = e.pageY - holographicBtn.offsetTop;
+
+                    holographicBtn.style.setProperty('--x', `${x}px`);
+                    holographicBtn.style.setProperty('--y', `${y}px`);
+                });
+            }
+        });
+
+        // Toggle mobile navigation
+        function toggleNav() {
+            const nav = document.getElementById('main-nav');
+            const hamburger = document.querySelector('.hamburger');
+
+            nav.classList.toggle('mobile-active');
+            nav.classList.toggle('is-open'); // Add/remove for animation
+            hamburger.classList.toggle('is-active'); // For hamburger 'x' animation
+        }
+
+        // Accessibility: Voice/Language toggle placeholder (add functionality here)
+        function toggleVoiceLang() {
+            alert('Voice and Language options coming soon!');
+        }
+    </script>
+
+    <section class="final-cta redesigned-cta">
+        <h2>Ready to Start?</h2>
+        <a href="Downoad.html" class="btn primary">Join Free – For Patients & Clinics</a>
+        <a href="contact.html" class="btn secondary">Request a Pilot</a>
+    </section>
+
+   
+
+    <button class="accessibility-btn" onclick="toggleVoiceLang()">
+        🌐
+        <span class="sr-only">Voice and Language Accessibility</span>
+    </button>
+</body>
+</html>
+  
+
+
+    
+ 
+<!-- Core Services Section -->
+<section class="core-services">
+  <div class="services-container">
+    <div class="service-category">
+      <h2 class="category-title">
+        <span class="icon"></span>
+        <span>For Healthcare Providers</span>
+      </h2>
+      
+      <div class="service-cards">
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>AI-Assisted Patient Intake</h3>
+          <ul>
+            <li>Automated history collection</li>
+            <li>Smart symptom analysis</li>
+            <li>Pre-visit questionnaires</li>
+            <li>Risk stratification scoring</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Clinical Decision Support</h3>
+          <ul>
+            <li>Evidence-based recommendations</li>
+            <li>Drug interaction alerts</li>
+            <li>Treatment pathway suggestions</li>
+            <li>Real-time clinical guidelines</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Smart Documentation</h3>
+          <ul>
+            <li>Voice-to-SOAP notes</li>
+            <li>Auto-generated visit summaries</li>
+            <li>Coding & billing support</li>
+            <li>Specialty-specific templates</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-category">
+      <h2 class="category-title">
+        <span class="icon"></span>
+        <span>For Patients</span>
+      </h2>
+      
+      <div class="service-cards">
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>24/7 Medical Guidance</h3>
+          <ul>
+            <li>AI chatbot for immediate questions</li>
+            <li>Personalized health advice</li>
+            <li>Medication reminders</li>
+            <li>Symptom checker</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Smart Record Transfer</h3>
+          <ul>
+            <li>One-click medical summaries</li>
+            <li>Specialist-ready packets</li>
+            <li>Secure sharing options</li>
+            <li>Timeline visualization</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Health Management</h3>
+          <ul>
+            <li>Personal health dashboard</li>
+            <li>Symptom tracking tools</li>
+            <li>Appointment preparation</li>
+            <li>Care team communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Pricing Tiers -->
+<section class="pricing-section">
+  <div class="pricing-container">
+    <h2 class="pricing-title">Simple, Transparent Pricing</h2>
+    <p class="pricing-subtitle">Choose the plan that fits your needs</p>
+    
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="price">Free</div>
+        <ul>
+          <li>✓ AI Medical Assistant</li>
+          <li>✓ Basic Symptom Checker</li>
+          <li>✓ Medication Tracking</li>
+          <li>✗ Advanced Record Sharing</li>
+          <li>✗ Priority Support</li>
+        </ul>
+        <a href="Download.html" class="btn secondary">Get Started</a>
+      </div>
+      
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <h3>Premium</h3>
+        <div class="price">$40.99<span>/month</span></div>
+        <ul>
+          <li>✓ All Basic Features</li>
+          <li>✓ Smart Record Transfer</li>
+          <li>✓ Specialist Templates</li>
+          <li>✓ Advanced Analytics</li>
+          <li>✓ Priority Support</li>
+        </ul>
+        <a href="Download.html" class="btn primary">Subscribe Now</a>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Clinic Pro</h3>
+        <div class="price">Custom</div>
+        <ul>
+          <li>✓ All Premium Features</li>
+          <li>✓ Multi-provider Dashboard</li>
+          <li>✓ EHR Integration</li>
+          <li>✓ Dedicated Account Manager</li>
+          <li>✓ Training & Onboarding</li>
+        </ul>
+        <a href="contact.html" class="btn secondary">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta redesigned-cta cta-bg-image">
+  <h2>Ready to Transform Healthcare?</h2>
+  <p>Join thousands of patients and providers using Nura Help for better care coordination</p>
+  <div class="cta-buttons">
+    <a href="Download.html" class="btn primary">Download Patient App</a>
+    <a href="contact.html" class="btn secondary">Request Clinic Demo</a>
+  </div>
+</section>
+<style> 
+  .final-cta.cta-bg-image {
+ 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.final-cta.cta-bg-image::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 32, 64, 0.6); /* Optional: dark overlay for text readability */
+  z-index: 1;
+}
+
+.final-cta.cta-bg-image > * {
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta.cta-bg-image .cta-buttons .btn {
+  margin: 10px 15px 0 15px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+}
+</style>
+
+<!-- Footer -->
+<footer class="footer redesigned-footer">
+  <div>
+    <a href="About.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="About.html">Terms</a>
+    <a href="contact.html">Support</a>
+  </div>
+  <small>HIPAA Compliance | &copy; 2025 Nura Help</small>
+</footer>
+
+<!-- Accessibility Button -->
+<button class="accessibility-btn" onclick="toggleVoiceLang()">
+  🌐
+  <span class="sr-only">Voice and Language Accessibility</span>
+</button>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  // Initialize particles.js
+  document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('particles-js')) {
+      particlesJS('particles-js', {
+        "particles": {
+          "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+          "color": { "value": "#00f0ff" },
+          "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+          "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+          "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+          "line_linked": { "enable": true, "distance": 150, "color": "#00f0ff", "opacity": 0.2, "width": 1 },
+          "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": { "enable": true, "mode": "grab" },
+            "onclick": { "enable": true, "mode": "push" },
+            "resize": true
+          },
+          "modes": {
+            "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
+            "push": { "particles_nb": 4 }
+          }
+        },
+        "retina_detect": true
+      });
+    }
+    
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tabId = button.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and content
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  });
+
+  // Hamburger menu functionality
+  function toggleNav() {
+    const nav = document.getElementById('main-nav');
+    const hamburger = document.getElementById('hamburger-btn');
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  }
+
+  // Close menu when clicking outside on mobile
+  document.addEventListener('click', function(event) {
+    const nav = document.getElementById('main-nav');
+    const hamburger = document.getElementById('hamburger-btn');
+    if (nav.classList.contains('open') {
+      if (!nav.contains(event.target) {
+        nav.classList.remove('open');
+        hamburger.classList.remove('active');
+      }
+    }
+  });
+
+  // Accessibility placeholder
+  function toggleVoiceLang() {
+    alert('Voice and language accessibility features coming soon!');
+  }
+</script>
+
+<style>
+/* Base Styles */
+:root {
+  --primary: #00f0ff;
+  --primary-dark: #0066ff;
+  --accent: #ff00e4;
+  --dark: #0a0a1a;
+  --light: #f8f9ff;
+  --white: #ffffff;
+  --gray: #e0e5f0;
+  --dark-blue: #0f0f2d;
+}
+
+body {
+  margin: 0;
+  background: var(--dark-blue);
+  font-family: 'Inter', sans-serif;
+  color: var(--light);
+}
+
+/* Header & Navigation (from existing) */
+.header.redesigned.transparent-navbar {
+  position: absolute;
+  top: 0; left: 0; width: 100%;
+  z-index: 10;
+  background: rgba(10, 20, 40, 0.15);
+  box-shadow: none;
+  border: none;
+  backdrop-filter: blur(8px) saturate(140%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3vw 0.7rem 3vw;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.nav a.active {
+  background: rgba(0, 240, 255, 0.18) !important;
+  color: var(--primary) !important;
+  border: 1px solid var(--primary) !important;
+}
+
+/* Services Hero Section */
+.services-hero.futuristic-hero {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(135deg, #0f0f2d 0%, #050510 100%);
+}
+
+/* Core Services Section */
+.core-services {
+  padding: 4rem 5vw;
+  background: linear-gradient(180deg, #151538 0%, #0a0a23 100%);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-title .icon {
+  font-size: 2.5rem;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: rgba(56, 182, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* Platform Features Section */
+.platform-features {
+  padding: 4rem 5vw;
+  background: linear-gradient(180deg, #0a0a23 0%, #151538 100%);
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--white);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-tabs {
+  background: rgba(10, 20, 40, 0.5);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab-button.active {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.tab-content {
+  display: none;
+  padding: 2rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.tab-text {
+  flex: 1;
+}
+
+.tab-text h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.tab-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tab-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tab-text ul li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.tab-text ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.tab-image {
+  flex: 1;
+  text-align: center;
+}
+
+.tab-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 4rem 5vw;
+  background: linear-gradient(135deg, #0f0f2d 0%, #050510 100%);
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: rgba(56, 182, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card.featured {
+  border: 1px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--primary);
+  color: var(--dark);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.price span {
+  font-size: 1rem;
+  color: var(--light);
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.pricing-card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: var(--dark);
+}
+
+.btn.primary:hover {
+  background: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn.secondary:hover {
+  background: rgba(0, 240, 255, 0.1);
+}
+
+/* Final CTA */
+.final-cta.redesigned-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+}
+
+.final-cta.redesigned-cta h2 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.final-cta.redesigned-cta p {
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.footer.redesigned-footer {
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+.footer.redesigned-footer a {
+  color: var(--primary);
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.footer.redesigned-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer.redesigned-footer small {
+  display: block;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+/* Accessibility Button */
+.accessibility-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 26px;
+  background: var(--primary);
+  color: var(--dark);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s;
+}
+
+.accessibility-btn:hover {
+  transform: scale(1.1);
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .tab-content-inner {
+    flex-direction: column;
+  }
+  
+  .service-cards, .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .features-title, .pricing-title {
+    font-size: 2rem;
+  }
+  
+  .final-cta.redesigned-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .tab-buttons {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  }
+  
+  .tab-button.active {
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    border-left: 4px solid var(--primary);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+</style>
+</body>
+</html>
