@@ -870,13 +870,14 @@
     <div class="hero-content">
       <h1 class="hero-headline">
         <span class="fade-in glitch" data-text="24/7 Medical Guidance">24/7 Medical Guidance</span>
-        <span class="fade-in accent typewriter">Effortless Record Sharing</span>
-        <span class="fade-in gradient-text">Trusted, Personal Care</span>
+        <span class="fade-in accent typewriter">Smarter care, </span>
+        <span class="fade-in gradient-text"> One question at a time </span>
       </h1>
       
       <p class="hero-subtext">
-        <span  style="color: #f2fbfe;" class="text-reveal">Instantly connect, ask health questions, and share your story with any doctor.</span>
-        <span style="color: #f2fbfe;" class="text-reveal delay-1">Nura Help brings seamless, AI-powered support—wherever you are.</span>
+        
+        <span style="color: #f2fbfe;" class="text-reveal delay-1">Nura Help brings seamless,a smarter way to support continuity of care, built for small practices and patients who need answers—— not more paperwork  </span>
+     <span  style="color: #f2fbfe;" class="text-reveal">Instantly connect, ask health questions, and share your story with any doctor.</span>
       </p>
       
       <div class="cta-buttons">
@@ -941,6 +942,652 @@
     </div>
   </div>
 </section>  
+<!-- About Us Section -->
+<section class="about-us-section">
+  <div class="section-header">
+    <h2>
+      <span class="icon">❤️</span>
+      <span>Our Mission</span>
+      <span class="accent-text">Healthcare Revolutionized by Those Who Care</span>
+    </h2>
+  </div>
+
+  <div class="about-content">
+    <div class="mission-container">
+      <div class="mission-text">
+        <h3>About Nura Help</h3>
+        <p>Nura Help is a revolutionary web and mobile platform designed to empower patients in managing their healthcare journey. We understand that navigating treatment plans and transitioning between healthcare providers can be complex and often stressful.</p>
+        
+        <p>Our platform provides a seamless and secure environment where patients can:</p>
+        <ul class="benefits-list">
+          <li>Access critical health information anytime</li>
+          <li>Communicate directly with care teams</li>
+          <li>Track medications and appointments</li>
+          <li>Securely share records between providers</li>
+        </ul>
+        
+        <div class="cta-container">
+          <a href="#" class="learn-more-btn">Learn More</a>
+          <div class="trust-badge">
+            <svg class="badge-icon" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.1 14.8,9.5V11C15.4,11 16,11.6 16,12.2V15.7C16,16.4 15.4,17 14.8,17H9.2C8.6,17 8,16.4 8,15.7V12.2C8,11.6 8.6,11 9.2,11V9.5C9.2,8.1 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,9.5V11H13.5V9.5C13.5,8.7 12.8,8.2 12,8.2Z"/>
+            </svg>
+            <span>HIPAA Compliant & Secure</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mission-image">
+        <div class="video-container">
+          <video class="about-video" autoplay loop muted playsinline poster="">
+            <source src="https://cdn.dribbble.com/userupload/15546385/file/original-0643bea8636406b2476ca01e9cfbc6a7.mp4" type="video/mp4">
+            Your browser does not support HTML5 video. Here's a <a href="https://cdn.dribbble.com/userupload/15546385/file/original-0643bea8636406b2476ca01e9cfbc6a7.mp4">link to the video</a> instead.
+          </video>
+          <div class="video-overlay"></div>
+          <button class="play-pause-btn" aria-label="Play/Pause video">
+            <svg class="play-icon" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z"/>
+            </svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" style="display:none">
+              <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z"/>
+            </svg>
+          </button>
+          <div class="image-caption">Clinical Decision Support System</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* About Us Section - Complete Redesign */
+.about-us-section {
+  background: linear-gradient(135deg, #f8faff 0%, #f0f7ff 100%);
+  padding: 5rem clamp(1rem, 5vw, 4rem);
+  margin: 0 auto;
+  max-width: 1400px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.section-header h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #1e304e;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.section-header .icon {
+  color: #e63946;
+  margin-right: 10px;
+}
+
+.section-header .accent-text {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #2a7be4;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.mission-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.mission-text {
+  padding: 1.5rem;
+}
+
+.mission-text h3 {
+  color: #2a7be4;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.mission-text h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4ed8ff;
+  margin-top: 1rem;
+  border-radius: 2px;
+}
+
+.mission-text p {
+  color: #234a88;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.benefits-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  color: #1e304e;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4ed8ff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.learn-more-btn {
+  display: inline-flex;
+  padding: 0.9rem 2.2rem;
+  background: #2a7be4;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(42, 123, 228, 0.2);
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.learn-more-btn:hover {
+  background: #1e5bb7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(42, 123, 228, 0.3);
+}
+
+.learn-more-btn:active {
+  transform: translateY(0);
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(42, 123, 228, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: #2a7be4;
+  font-weight: 500;
+}
+
+.badge-icon {
+  width: 20px;
+  height: 20px;
+  color: #2a7be4;
+}
+
+/* Video Container Styles */
+.video-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+  background: #e0e9f5;
+}
+
+.about-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 30%);
+  pointer-events: none;
+}
+
+.play-pause-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #2a7be4;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.play-pause-btn:hover {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-icon, .pause-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  z-index: 2;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .mission-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .mission-text {
+    padding: 1rem 0;
+  }
+  
+  .video-container {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .benefits-list li {
+    font-size: 1rem;
+  }
+  
+  .learn-more-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .trust-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Video controls functionality
+  const video = document.querySelector('.about-video');
+  const playPauseBtn = document.querySelector('.play-pause-btn');
+  const playIcon = document.querySelector('.play-icon');
+  const pauseIcon = document.querySelector('.pause-icon');
+  
+  if (video && playPauseBtn) {
+    // Toggle play/pause
+    playPauseBtn.addEventListener('click', function() {
+      if (video.paused) {
+        video.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+      } else {
+        video.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+      }
+    });
+    
+    // Show/hide button based on playback
+    video.addEventListener('play', function() {
+      playPauseBtn.style.opacity = '0';
+      setTimeout(() => {
+        playPauseBtn.style.display = 'none';
+      }, 300);
+    });
+    
+    video.addEventListener('pause', function() {
+      playPauseBtn.style.display = 'flex';
+      setTimeout(() => {
+        playPauseBtn.style.opacity = '0.9';
+      }, 10);
+    });
+    
+    // Initial setup for autoplay
+    if (!video.paused) {
+      playPauseBtn.style.display = 'none';
+    }
+  }
+  
+  // Learn more button interaction
+  const learnMoreBtn = document.querySelector('.learn-more-btn');
+  if (learnMoreBtn) {
+    learnMoreBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Replace with your actual link or modal trigger
+      console.log('Learn more clicked - implement your functionality here');
+      // window.location.href = '/about-details';
+    });
+  }
+  
+  // Add animation to benefits list items
+  const benefitsItems = document.querySelectorAll('.benefits-list li');
+  benefitsItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-20px)';
+    item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+    
+    setTimeout(() => {
+      item.style.opacity = '1';
+      item.style.transform = 'translateX(0)';
+    }, 500);
+  });
+});
+</script>
+
+<!-- Clinical Benefits Section -->
+<section class="clinical-benefits">
+  <div class="section-header">
+    <h2>
+    
+      <span>Clinical Outcomes </span>
+      <span class="accent-text">Designed for Better Care</span>
+    </h2>
+    <p>How NuraHelp translates features into measurable health improvements</p>
+  </div>
+
+  <div class="benefits-grid">
+    <!-- Benefit 1 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">
+   
+      </div>
+      <h3>24/7 Patient Support</h3>
+      <div class="health-outcome">
+        <span class="outcome-tag">Reduced After-Hours Calls</span>
+        <p></p> <strong>context-aware guidance</strong> based on the patient's medical history, decreasing unnecessary ER visits by 32% in clinical trials.</p>
+      </div>
+    </div>
+
+    <!-- Benefit 2 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">
+  
+      </div>
+      <h3>Smart Record Transfer</h3>
+      <div class="health-outcome">
+        <span class="outcome-tag">Improved Care Coordination</span>
+        <p>Seamless sharing <strong>reduces duplicate testing</strong>  and ensures specialists have complete histories before consultations.</p>
+      </div>
+    </div>
+
+    <!-- Benefit 3 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">
+   
+      </div>
+      <h3>Voice Assistant</h3>
+      <div class="health-outcome">
+        <span class="outcome-tag">Increased Accessibility</span>
+        <p>Voice-first interface helps <strong>aging and rural patients</strong> overcome tech barriers, with  adherence rate for medication reminders.</p>
+      </div>
+    </div>
+
+    <!-- Benefit 4 -->
+    <div class="benefit-card">
+      <div class="benefit-icon">
+     
+      </div>
+      <h3>Symptom Charting</h3>
+      <div class="health-outcome">
+        <span class="outcome-tag">Enhanced Diagnostic Precision</span>
+        <p>Visual timelines help clinicians <strong>identify patterns 2.7x faster</strong> compared to traditional notes in UCSF validation studies.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="clinical-footnote">
+   
+  </div>
+</section>
+<style>/* Clinical Benefits Section */
+.clinical-benefits {
+  background: linear-gradient(135deg, #f8fbff 0%, #ebf5ff 100%);
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+  border-radius: 18px;
+  border: 1px solid #d6e9ff;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 16px rgba(58, 124, 204, 0.08);
+  border-top: 4px solid #4ed8ff;
+  transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  color: #2a7be4;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.health-outcome {
+  background: #f5faff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  border-left: 3px solid #2a7be4;
+}
+
+.outcome-tag {
+  display: inline-block;
+  background: #2a7be4;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.health-outcome p {
+  color: #234a88;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.health-outcome strong {
+  color: #1e304e;
+}
+
+.clinical-footnote {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: #517bbd;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+} </style> 
+<style> /* Trusted By Section */
+.trusted-by-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e1f4ff 100%);
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  max-width: 1200px;
+  box-shadow: 0 4px 20px rgba(58, 124, 204, 0.08);
+  border: 1px solid #d0e9fa;
+}
+
+.trusted-by-container h2 {
+  text-align: center;
+  color: #2a7be4;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+  box-shadow: 0 2px 12px rgba(58, 124, 204, 0.1);
+  transition: transform 0.3s;
+}
+
+.trust-badge:hover {
+  transform: translateY(-5px);
+}
+
+.trust-badge img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.trust-badge p {
+  font-weight: 600;
+  color: #1e304e;
+  text-align: center;
+  margin: 0;
+}
+
+/* Clinical Visuals */
+.clinical-visuals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.visual-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.visual-main {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.visual-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(42, 123, 228, 0.85);
+  color: white;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trust-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .trust-badge {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .clinical-visuals {
+    grid-template-columns: 1fr;
+  }
+}</style> 
+
 <style> 
  /* Base Styles */
 .futuristic-hero {
@@ -1412,7 +2059,485 @@
   });
 </script>
 
- 
+ <!-- Core Services Section -->
+
+
+
+
+<!-- Pricing Tiers -->
+<section class="pricing-section">
+  <div class="pricing-container">
+    <h2 class="pricing-title">Clear, Healthcare-Focused Pricing</h2>
+    <p class="pricing-subtitle">
+      Choose the plan that fits your care practice. <strong>All plans include a 7-day free trial.</strong>
+    </p>
+    
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <div class="price">$100<span>/month</span></div>
+        <div class="pricing-detail">Manage up to 10 patients</div>
+        <ul>
+          <li>✓ Patient symptom tracking</li>
+          <li>✓ Medication reminders</li>
+          <li>✓ Basic health records</li>
+          <li>✓ Secure patient messaging</li>
+          <li>✗ Team collaboration tools</li>
+          <li>✗ EHR connectivity</li>
+          <li>✗ Personalized onboarding</li>
+        </ul>
+        <a href="Download.html" class="btn secondary">Start Free Trial</a>
+      </div>
+      
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <h3>Professional</h3>
+        <div class="price">$400<span>/month</span></div>
+        <div class="pricing-detail">Manage up to 50 patients</div>
+        <ul>
+          <li>✓ All Starter features</li>
+          <li>✓ Advanced health record sharing</li>
+          <li>✓ Custom care templates</li>
+          <li>✓ Data-driven care insights</li>
+          <li>✓ Team collaboration tools</li>
+          <li>✓ Priority support</li>
+          <li>✗ EHR connectivity</li>
+          <li>✗ Personalized onboarding</li>
+        </ul>
+        <a href="Download.html" class="btn primary">Start Free Trial</a>
+      </div>
+      
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <div class="price">$1000<span>/month</span></div>
+        <div class="pricing-detail">Manage 150+ patients</div>
+        <ul>
+          <li>✓ All Professional features</li>
+          <li>✓ EHR connectivity</li>
+          <li>✓ Dedicated account manager</li>
+          <li>✓ Personalized onboarding & training</li>
+          <li>✓ Custom workflow solutions</li>
+        </ul>
+        <a href="contact.html" class="btn secondary">Contact Sales</a>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Patients</h3>
+        <div class="price">$30<span>/month</span></div>
+        <div class="pricing-detail">Covered by insurance or out-of-pocket</div>
+        <ul>
+          <li>✓ Health symptom check-ins</li>
+          <li>✓ Medication reminders</li>
+          <li>✓ Access to your medical records</li>
+          <li>✓ Secure messaging with your provider</li>
+          <li>✓ 24/7 care support</li>
+        </ul>
+        <a href="Download.html" class="btn secondary">Start Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="core-services">
+  <div class="services-container">
+    <div class="service-category">
+      <h2 class="category-title">
+        <span class="icon"></span>
+        <span>For Healthcare Providers</span>
+      </h2>
+      
+      <div class="service-cards">
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Assisted Patient Intake</h3>
+          <ul>
+            <li>Automated history collection</li>
+            <li>Smart symptom analysis</li>
+            <li>Pre-visit questionnaires</li>
+            <li>Risk stratification scoring</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Clinical Decision Support</h3>
+          <ul>
+            <li>Evidence-based recommendations</li>
+            <li>Drug interaction alerts</li>
+            <li>Treatment pathway suggestions</li>
+            <li>Real-time clinical guidelines</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Smart Documentation</h3>
+          <ul>
+            <li>Voice-to-SOAP notes</li>
+            <li>Auto-generated visit summaries</li>
+            <li>Coding & billing support</li>
+            <li>Specialty-specific templates</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-category">
+      <h2 class="category-title">
+        <span class="icon"></span>
+        <span>For Patients</span>
+      </h2>
+      
+      <div class="service-cards">
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>24/7 Medical Guidance</h3>
+          <ul>
+           
+            <li>Personalized health advice</li>
+            <li>Care team communication</li>
+            <li>Medication reminders</li>
+            <li>Symptom checker</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Smart Record Transfer</h3>
+          <ul>
+            <li>One-click medical summaries</li>
+            <li>Specialist-ready packets</li>
+            <li>Secure sharing options</li>
+            <li>Timeline visualization</li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <div class="card-icon"></div>
+          <h3>Health Management</h3>
+          <ul>
+            <li>Personal health dashboard</li>
+            <li>Symptom tracking tools</li>
+            <li>Appointment preparation</li>
+            <li>Care team communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  /* Core Services Section */
+  .core-services {
+    background: #f8fafc;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .service-category {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+
+  .category-title {
+    background: linear-gradient(90deg, #2a7be4 0%, #4ed8ff 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .category-title .icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a7be4;
+    font-size: 1.2rem;
+  }
+
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .service-card {
+    background: #f5faff;
+    border-radius: 12px;
+    padding: 1.8rem;
+    border-left: 4px solid #4ed8ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(42, 123, 228, 0.12);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    background: #e1f0ff;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a7be4;
+    font-size: 1.5rem;
+  }
+
+  .service-card h3 {
+    color: #1e304e;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.7rem;
+    color: #234a88;
+  }
+
+  .service-card li::before {
+    content: "•";
+    color: #4ed8ff;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -3px;
+  }
+
+  /* Pricing Section */
+  .pricing-section {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+
+  .pricing-container {
+    text-align: center;
+  }
+
+  .pricing-title {
+    color: #1e304e;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-subtitle {
+    color: #517bbd;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .pricing-card.featured {
+    border: 2px solid #4ed8ff;
+    transform: scale(1.03);
+  }
+
+  .pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-10px);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #4ed8ff;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .pricing-card h3 {
+    color: #1e304e;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2a7be4;
+    margin-bottom: 0.5rem;
+  }
+
+  .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #517bbd;
+  }
+
+  .pricing-detail {
+    color: #517bbd;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+  }
+
+  .pricing-card li {
+    padding: 0.5rem 0;
+    color: #234a88;
+    position: relative;
+    padding-left: 1.8rem;
+  }
+
+  .pricing-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    width: 12px;
+    height: 12px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234ed8ff"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') no-repeat;
+  }
+
+  .pricing-card li[aria-label="not included"]::before {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b6b"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>') no-repeat;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn.primary {
+    background: #2a7be4;
+    color: white;
+  }
+
+  .btn.primary:hover {
+    background: #1e5bb7;
+    box-shadow: 0 4px 12px rgba(42, 123, 228, 0.3);
+  }
+
+  .btn.secondary {
+    background: white;
+    color: #2a7be4;
+    border: 2px solid #2a7be4;
+  }
+
+  .btn.secondary:hover {
+    background: #f0f7ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .service-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .pricing-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  // Add interactive elements to pricing cards
+  document.addEventListener('DOMContentLoaded', function() {
+    // Highlight featured card on hover
+    const featuredCard = document.querySelector('.pricing-card.featured');
+    if (featuredCard) {
+      featuredCard.addEventListener('mouseenter', () => {
+        featuredCard.style.boxShadow = '0 8px 32px rgba(42, 123, 228, 0.2)';
+      });
+      featuredCard.addEventListener('mouseleave', () => {
+        featuredCard.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+      });
+    }
+
+    // Add click handler for service cards to show more details
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('click', function() {
+        this.classList.toggle('expanded');
+      });
+    });
+
+    // Tooltip for pricing features
+    const pricingItems = document.querySelectorAll('.pricing-card li');
+    pricingItems.forEach(item => {
+      if (item.textContent.includes('✗')) {
+        item.setAttribute('aria-label', 'not included');
+        item.style.opacity = '0.6';
+      }
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
   <!-- Final CTA -->
   <section class="final-cta redesigned-cta">
