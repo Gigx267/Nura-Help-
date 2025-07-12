@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Customer Service | Nura Help</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Customer Service Page Styles */
+    :root {
+      --primary: #36a2ef;
+      --accent: #00e0d3;
+      --deep: #0c264c;
+      --light: #e8f6ff;
+      --white: #fff;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fbfe;
+      color: var(--deep);
+      line-height: 1.6;
+    }
+    
+    .service-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .service-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .service-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .service-header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4a5568;
+    }
+    
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(54, 162, 239, 0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .service-card h3 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .service-card p {
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    
+    .contact-info h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--deep);
+    }
+    
+    .contact-info p {
+      margin: 0.3rem 0 0;
+      color: #718096;
+      font-size: 0.95rem;
+    }
+    
+    .response-time {
+      background: var(--light);
+      border-left: 4px solid var(--primary);
+      padding: 1rem;
+      margin-top: 2rem;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .response-time p {
+      margin: 0;
+      color: var(--deep);
+      font-weight: 500;
+    }
+    
+    .inquiry-form {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(54, 162, 239, 0.08);
+      margin-top: 4rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .inquiry-form h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--deep);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    
+    .submit-btn:hover {
+      background: #2a8bd6;
+    }
+    
+    .confirmation-message {
+      text-align: center;
+      padding: 2rem;
+      background: #f0fdf4;
+      border-radius: 8px;
+      border-left: 4px solid #22c55e;
+      margin-top: 2rem;
+      display: none;
+    }
+    
+    .confirmation-message h3 {
+      color: #166534;
+      margin-bottom: 1rem;
+    }
+    
+    .confirmation-message p {
+      color: #166534;
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .service-header h1 {
+        font-size: 2rem;
+      }
+      
+      .inquiry-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="service-container">
+    <header class="service-header">
+     
+      <p>Our customer service team is dedicated to providing you with prompt, professional assistance. A representative will reach out to you shortly after you submit your inquiry.</p>
+    </header>
+    
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Contact Options</h3>
+        <p>Choose the method that works best for you. Our team is available through multiple channels.</p>
+        
+        <div class="contact-method">
+          <div class="contact-icon">📧</div>
+          <div class="contact-info">
+            <h4>Email Support</h4>
+            <p>support@nurahelp.com</p>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <div class="contact-icon">📱</div>
+          <div class="contact-info">
+            <h4>Phone Support</h4>
+            <p>(+1 (682) 461-3691)</p>
+          </div>
+        </div>
+        
+      
+        
+        
+      
+      <div class="service-card">
+        <h3>What to Expect</h3>
+        <p>When you contact our customer service team, here's our standard process:</p>
+        
+        <ol style="padding-left: 1.5rem; color: #4a5568;">
+          <li style="margin-bottom: 0.8rem;">You submit your inquiry through our form, email, or phone</li>
+          <li style="margin-bottom: 0.8rem;">You'll receive an immediate confirmation of receipt</li>
+          <li style="margin-bottom: 0.8rem;">Our team reviews and prioritizes your request</li>
+          <li style="margin-bottom: 0.8rem;">A representative will contact you with a resolution</li>
+          <li>We follow up to ensure your issue is fully resolved</li>
+        </ol>
+        
+      
+      </div>
+    </div>
+    
+ 
+
+  <script>
+    document.getElementById('customerServiceForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // In a real implementation, you would send the form data to your server here
+      // For demonstration, we'll just show the confirmation message
+      
+      // Hide the form
+      this.style.display = 'none';
+      
+      // Show confirmation message
+      document.getElementById('confirmationMessage').style.display = 'block';
+      
+      // Scroll to confirmation message
+      document.getElementById('confirmationMessage').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
